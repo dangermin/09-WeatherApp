@@ -1,0 +1,52 @@
+body {
+	background-image: url("https://c1.staticflickr.com/4/3234/2977619616_da9efef2f1_b.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+    margin-top: 25px;;
+}
+
+.info {
+	background-color: white;
+	background-color: transparent 50%;
+}
+.search {
+	min-height: 420px;
+	margin-left: 95px;
+
+}
+
+.row {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+div {
+    font-size: 20px;
+    width: 100%;
+}
+
+#result {
+	color: green;
+}
+
+input {
+    margin-bottom: 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+h1 {
+    background-color: lightblue;
+    border-radius: 10px;
+    padding: 15px;
+    color: #0066ff ;
+    width: 100%;
+}
+
+.search, .info {
+    border: 2px solid lightblue;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+

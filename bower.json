@@ -1,0 +1,30 @@
+{
+  "name": "DEMO-GULP",
+  "authors": [
+    "dangermin <dangermin.field@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.3",
+    "angular": "^1.5.5",
+    "bootstrap": "^3.3.6",
+    "toastr": "^2.1.2",
+    "lodash": "^4.11.2",
+    "moment": "^2.13.0"
+  },
+  "private": true,
+  "devDependencies": {
+    "angular-mocks": "^1.5.5",
+    "jquery": "^2.2.3"
+  }
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Channel</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/toastr/toastr.css" />
+    <!-- endbower -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/app/style/style.css">
+    <!-- endinject -->
+</head>
+
+<body ng-controller="WeatherController as vm">
+    <!-- Jombo Tron -->
+    <div class="container">
+        <div class="jumbotron">
+            <h1 style="background-color: transparent; text-align: center; border-style: none; font-weight: normal">What's the Weather Like? <br>Sunny!</h1>
+        </div>
+        <div>
+            <span class="input-group-btn">
+            <button class="btn btn-primary" ng-click="vm.getWeather('san diego')">San Diego</button>
+            <button class="btn btn-primary" ng-click="vm.getWeather('new york')">New York</button>
+            <button class="btn btn-primary" ng-click="vm.getWeather('washington dc')">Washington D.C.</button>
+            <button class="btn btn-primary" ng-click="vm.getWeather('london')">London</button>
+            <button class="btn btn-primary" ng-click="vm.getWeather('tokyo')">Tokyo</button>    
+        </span>
+            <form>
+                <input class="col-sm-11" ng-model="vm.city" placeholder="Search for City" />
+                <button type="submit" ng-click="vm.getWeather(vm.city)" class="col-sm-1 btn btn-default">Go!</button>
+            </form>
+        </div>
+        <!-- ./Input End -->
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-6 info-block info">
+                <h1 class="text-center info-header">City Information</h1>
+                <div class="row">
+                    <h2 class="text-center">{{vm.WeatherResponseName}}</h2>
+                    <p id="result" class="text-center">Lat: {{vm.WeatherResponseLat}} / Long: {{vm.WeatherResponseLon}}</p>
+                </div>
+                <hr>
+                <div ng-cloak>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <p><strong>Temperature</strong></p>
+                            <p id="result">{{vm.WeatherResponseTemp}}F</p>
+                        </div>
+                        <div class="col-md-4">
+                            <p><strong>Pressure</strong></p>
+                            <p id="result">{{vm.WeatherResponsePressure}}</p>
+                        </div>
+                        <div class="col-md-4">
+                            <p><strong>Humidity</strong></p>
+                            <p id="result">{{vm.WeatherResponseHumidity}}%</p>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="info2 row">
+                        <div class="col-md-4">
+                            <p><strong>Lowest Temp</strong></p>
+                            <p id="result">{{vm.WeatherResponseLowTemp}}F</p>
+                        </div>
+                        <div class="col-md-4">
+                            <p><strong>Highest Temp</strong></p>
+                            <p id="result">{{vm.WeatherResponseHighTemp}}F</p>
+                        </div>
+                        <div class="col-md-4">
+                            <p><strong>Wind Speed</strong></p>
+                            <p id="result">{{vm.WeatherResponseWindSpeed}}mph</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Info Row-->
+            </div>
+            <div ng-cloak>
+                <div class="col-md-5 info-block info search">
+                    <h1 class="text-center info-header">Search History</h1>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>City</th>
+                                <th>Info</th>
+                            </tr>
+                        </thead>
+                        <tbody class="container">
+                            <tr ng-repeat="city in vm.cityArray">
+                                <td>{{city.name}}</td>
+                                <td>{{city.time}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- bower:js -->
+            <script src="bower_components/jquery/dist/jquery.js"></script>
+            <script src="bower_components/angular/angular.js"></script>
+            <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+            <script src="bower_components/toastr/toastr.js"></script>
+            <script src="bower_components/lodash/lodash.js"></script>
+            <script src="bower_components/moment/moment.js"></script>
+            <!-- endbower -->
+            <!-- inject:js -->
+            <script src="/app/app.js"></script>
+            <script src="/app/WeatherController.js"></script>
+            <script src="/app/WeatherFactory.js"></script>
+            <!-- endinject -->
+</body>
+
+</html>
